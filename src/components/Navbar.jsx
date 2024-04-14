@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import { routes } from "../routes";
 import { NavMobile } from "./NavMobile";
@@ -36,15 +36,15 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <span>
-        <NavLink
+      <span className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md">
+        {/* <NavLink
           to="/"
           className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
-        >
-          <p className="blue-gradient_text">BG</p>
-        </NavLink>
+        > */}
+        <p className="blue-gradient_text">BG</p>
+        {/* </NavLink> */}
       </span>
-      <nav className="flex text-lg gap-7 font-medium">
+      <nav className="flex text-lg gap-7 font-medium mr-6">
         <NavMobile />
         <NavDesktop />
       </nav>

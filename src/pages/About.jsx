@@ -6,10 +6,11 @@ import "react-vertical-timeline-component/style.min.css";
 
 import CTA from "../components/CTA";
 import { skills, experiences } from "../constants";
+import { Fragment } from "react";
 
 const About = () => {
   return (
-    <section className="max-container">
+    <Fragment>
       {/* Introduction */}
       <h1 className="head-text">
         Hello, I'm{" "}
@@ -98,10 +99,7 @@ const About = () => {
           </VerticalTimeline>
         </div>
       </div>
-
-      <hr className="border-slate-200" />
-      <CTA />
-    </section>
+    </Fragment>
   );
 };
 

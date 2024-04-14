@@ -1,8 +1,10 @@
 import { routes } from "../routes";
 
+import { Link, animateScroll as scroll } from "react-scroll";
+
 export const NavDesktop = () => {
   return (
-    <ul className="hidden lg:flex lg:items-center gap-5 mr-8">
+    <ul className="hidden lg:flex lg:items-center gap-5 mr-8 md:flex md:items-center">
       {routes.map((route) => {
         const { href, title } = route;
         return (

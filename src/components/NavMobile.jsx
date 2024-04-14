@@ -15,7 +15,7 @@ export const NavMobile = () => {
   }, [isOpen]);
 
   return (
-    <div ref={ref} className="lg:hidden ">
+    <div ref={ref} className=" md:hidden lg:hidden">
       <Hamburger
         toggled={isOpen}
         size={20}
@@ -45,12 +45,12 @@ export const NavMobile = () => {
                       delay: 0.1 + idx / 10,
                     }}
                     key={route.title}
-                    className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr bg-white via-neutral-100 to-neutral-100"
+                    className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr bg-white/80 via-neutral-100 to-neutral-100"
                   >
                     <a
                       onClick={() => setOpen((prev) => !prev)}
                       className={
-                        "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-0"
+                        "flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0"
                       }
                       href={route.href}
                     >

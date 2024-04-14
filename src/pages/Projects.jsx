@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import CTA from "../components/CTA";
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";
+import { Fragment } from "react";
 
 const Projects = () => {
   return (
-    <section className="max-container">
+    <Fragment>
       {/* Introduction */}
       <h1 className="head-text">
         My{" "}
@@ -42,14 +43,14 @@ const Projects = () => {
               </h4>
               <p className="mt-2 text-slate-500">{project.description}</p>
               <div className="mt-5 flex items-center gap-2 font-poppins">
-                <Link
+                {/* <Link
                   to="project.link"
                   target="_blank"
                   rel="noopenner noreferrer"
                   className="font-semibold text-blue-600"
-                >
-                  Live Link
-                </Link>
+                > */}
+                Live Link
+                {/* </Link> */}
                 <img
                   src={arrow}
                   alt="arrow"
@@ -63,7 +64,7 @@ const Projects = () => {
 
       <hr className="border-slate-200" />
       <CTA />
-    </section>
+    </Fragment>
   );
 };
 
