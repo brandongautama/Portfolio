@@ -20,8 +20,8 @@ const CTA = () => {
         <CopyToClipboard text="brandongautama15@gmail.com" onCopy={onCopyText}>
           <button className="btn">brandongautama15@gmail.com</button>
         </CopyToClipboard>
-        <div className="alert-success mt-2">
-          {copyStatus ? "Email copied!" : "☝️ Click to copy"}
+        <div className="mt-2 font-poppins">
+          {copyStatus ? "Email copied!" : "Click to copy ☝️"}
         </div>
       </div>
     </section>
