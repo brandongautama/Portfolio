@@ -9,12 +9,22 @@ export const NavDesktop = () => {
         const { href, title } = route;
         return (
           <li key={route.title}>
-            <a
+            {/* <a
               href={href}
+              className="flex items-center gap-1 hover:text-neutral-400 transition-all font-poppins"
+            > */}
+            <Link
+              activeStyle={{ color: "#3b82f6" }}
+              to={href}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={300}
               className="flex items-center gap-1 hover:text-neutral-400 transition-all font-poppins"
             >
               {title}
-            </a>
+            </Link>
+            {/* </a> */}
           </li>
         );
       })}

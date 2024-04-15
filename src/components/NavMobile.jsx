@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { routes } from "../routes";
 import { useClickAway } from "react-use";
 
+import { Link, animateScroll as scroll } from "react-scroll";
+
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
@@ -44,20 +46,31 @@ export const NavMobile = () => {
                       damping: 20,
                       delay: 0.1 + idx / 10,
                     }}
-                    key={route.title}
+                    key={route.href}
                     className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr bg-white/80 via-neutral-100 to-neutral-100"
                   >
-                    <a
+                    {/* <a
                       onClick={() => setOpen((prev) => !prev)}
                       className={
                         "flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0"
                       }
                       href={route.href}
+                    > */}
+                    <Link
+                      activeStyle={{ color: "#3b82f6" }}
+                      to={route.href}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={200}
+                      className="flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0"
+                      onClick={() => setOpen((prev) => !prev)}
                     >
                       <span />
                       <span className="flex gap-1 text-lg">{route.title}</span>
                       <span />
-                    </a>
+                    </Link>
+                    {/* </a> */}
                   </motion.li>
                 );
               })}
