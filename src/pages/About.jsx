@@ -1,10 +1,10 @@
-import { myphoto } from "../assets/images";
+import { myphoto2 } from "../assets/images";
 
 const About = () => {
   return (
     <section id="#about">
       {/* Introduction */}
-      <div className="md:grid md:grid-cols-5 md:grid-rows-none  justify-around items-center">
+      <div className="md:grid md:grid-cols-5 md:grid-rows-none  justify-around items-start">
         <div className="flex flex-col items-start col-span-3">
           <h1 className="head-text ">
             Hello, I'm{" "}
@@ -19,10 +19,10 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="md:col-span-2">
+        <div className="sm:flex justify-center md:col-span-2">
           <img
-            src={myphoto}
-            className="object-contain float-center"
+            src={myphoto2}
+            className="object-contain float-center h-56 md:h-full m-auto"
             alt="Profile Picture"
           />
         </div>
