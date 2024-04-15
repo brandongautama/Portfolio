@@ -4,7 +4,7 @@ import { skills } from "../constants";
 const Skills = () => {
   return (
     <section id="#skills">
-      <div className="py-10 flex flex-col mb-10">
+      <div className="py-10 flex flex-col mb-16">
         <h3 className="subhead-text">Skills</h3>
         <div className="mt-8 flex flex-wrap gap-12 justify-center">
           {skills.map((skill) => (

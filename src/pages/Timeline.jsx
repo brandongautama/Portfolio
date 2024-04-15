@@ -11,7 +11,7 @@ const Timeline = ({ id, timeline }) => {
   return (
     <div id={id}>
       {/* Work Experience */}
-      <div className="py-10">
+      <div className="py-5">
         <h3 className="subhead-text">{timeline.section_title}</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>{timeline.section_description}</p>
