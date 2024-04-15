@@ -14,8 +14,8 @@ const About = () => {
           </h1>
           <div className="mt-5 flex flex-col gap-3 text-slate-500">
             <p>
-              Software Engineer based in San Francisco Bay Area, specializing in
-              highly scalable cloud services.
+              I'm a Software Engineer based in San Francisco Bay Area,
+              specializing in highly scalable cloud services.
             </p>
           </div>
         </div>
