@@ -3,6 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import "./timeline.css";
 
 const Timeline = ({ id, timeline }) => {
   const experiences = timeline.experiences;
