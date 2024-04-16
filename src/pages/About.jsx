@@ -12,10 +12,12 @@ const About = () => {
               Brandon
             </span>
           </h1>
+          <h2 className="subhead-text ">Cloud Software Engineer</h2>
           <div className="mt-5 flex flex-col gap-3 text-slate-500">
             <p>
-              I'm a Software Engineer based in San Francisco Bay Area,
-              specializing in highly scalable cloud services.
+              I'm a backend software engineer based in San Francisco Bay Area.
+              My experience has been mainly on building highly scalable
+              microservices using Java and AWS infrastructure ecosystems.
             </p>
           </div>
         </div>

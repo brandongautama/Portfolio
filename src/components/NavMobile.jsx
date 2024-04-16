@@ -63,7 +63,7 @@ export const NavMobile = () => {
                       smooth={true}
                       offset={-70}
                       duration={200}
-                      className="flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0"
+                      className="flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0 cursor-pointer"
                       onClick={() => setOpen((prev) => !prev)}
                     >
                       <span />
