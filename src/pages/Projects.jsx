@@ -46,6 +46,18 @@ const Projects = () => {
                   {project.name}
                 </h4>
                 <p className="mt-2 text-slate-500">{project.description}</p>
+                <ul className="flex mt-2 font-poppins">
+                  {project.skills?.map((skill, id) => {
+                    return (
+                      <li
+                        key={id}
+                        className=" border-2 rounded-3xl border-slate-500 text-slate-500 py-0.5 px-2 mx-0.5 text-xs"
+                      >
+                        {skill}
+                      </li>
+                    );
+                  })}
+                </ul>
                 <div className="mt-5 flex items-center gap-2 font-poppins">
                   {/* <Link
                   to="project.link"
@@ -53,13 +65,17 @@ const Projects = () => {
                   rel="noopenner noreferrer"
                   className="font-semibold text-blue-600"
                 > */}
-                  Live Link
-                  {/* </Link> */}
-                  <img
-                    src={arrow}
-                    alt="arrow"
-                    className="w-4 h-4 object-contain"
-                  />
+                  <a
+                    href={project.link}
+                    className="flex flex-row items-center font-semibold text-blue-600"
+                  >
+                    Source Code
+                    <img
+                      src={arrow}
+                      alt="arrow"
+                      className="w-4 h-4 object-contain ml-1"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

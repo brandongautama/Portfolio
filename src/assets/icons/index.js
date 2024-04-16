@@ -35,6 +35,11 @@ import cplusplus from "./cplusplus.svg";
 import amazon from "./amazon.svg";
 import ucsd from "./ucsd.svg";
 import hku from "./hku.svg";
+import gmail from "./gmail.svg";
+import housemates from "./housemates.png";
+import housemateslogo from "./housemateslogo.svg";
+import surfstore from "./surfstore.svg";
+import raft from "./raft.svg";
 
 export {
   css,
@@ -74,4 +79,9 @@ export {
   amazon,
   ucsd,
   hku,
+  gmail,
+  housemates,
+  housemateslogo,
+  surfstore,
+  raft,
 };
