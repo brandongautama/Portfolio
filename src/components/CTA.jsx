@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { linkedin, gmail, github } from "../assets/icons";
 
 const CTA = () => {
-  const [copyStatus, setCopyStatus] = useState(false); // To indicate if the text was copied
-
-  const onCopyText = () => {
-    setCopyStatus(true);
-    setTimeout(() => setCopyStatus(false), 2000); // Reset status after 2 seconds
-  };
-
   return (
     <section className="cta">
       <p className="cta-text">
-        Have a project in mind? <br className="sm:block hidden" />
-        Let's build something together
+        <span className="head-text blue-gradient_text font-semibold drop-shadow">
+          Contact
+        </span>
+        <br className="sm:block hidden" />
+        <span>Feel free to reach out!</span>
       </p>
       {/* <Link to="/contact" className="button"></Link> */}
-      <div>
-        <CopyToClipboard text="brandongautama15@gmail.com" onCopy={onCopyText}>
-          <button className="btn">brandongautama15@gmail.com</button>
-        </CopyToClipboard>
-        <div className="mt-2 font-poppins">
-          {copyStatus ? "Email copied!" : "Click to copy ☝️"}
-        </div>
+      <div className="flex flex-col mr-8 gap-4">
+        <span className="flex flex-row text-md font-poppins items-center text-blue-500">
+          <img src={gmail} className="w-8 h-8 mx-2 ml-0 mr-4" />{" "}
+          brandongautama15@gmail.com
+        </span>
+        <span className="flex flex-row text-md font-poppins items-center text-blue-500">
+          <img src={linkedin} className="w-8 h-8 mx-2 ml-0 mr-4" />{" "}
+          linkedin.com/in/brandongautama
+        </span>
+        <span className="flex flex-row text-md font-poppins items-center text-blue-500">
+          <img src={github} className="w-8 h-8 mx-2 ml-0 mr-4" />{" "}
+          github.com/brandongautama
+        </span>
       </div>
     </section>
   );
