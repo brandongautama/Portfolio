@@ -17,11 +17,7 @@ const Projects = () => {
           </span>
         </h1>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
-          <p>
-            I've embarked on numerous projects throughout the years, but these
-            are the ones... feel free to explore codebase and contribute your
-            ideas for further enhancements. Your collaboration is highly valued!
-          </p>
+          <p></p>
         </div>
 
         <div className="flex flex-wrap my-8 gap-16 gap-y-8">
