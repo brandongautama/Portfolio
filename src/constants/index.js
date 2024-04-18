@@ -119,7 +119,7 @@ export const skills = [
 
 export const work_experience = {
   section_title: "Work Experience",
-  section_description: "I've worked as Software Engineer since graduation",
+  section_description: "",
   experiences: [
     {
       title: "Software Development Engineer",
@@ -162,7 +162,7 @@ export const work_experience = {
 
 export const education = {
   section_title: "Education",
-  section_description: "Schools",
+  section_description: "",
   experiences: [
     {
       title: "University of California, San Diego",
@@ -226,7 +226,7 @@ export const projects = [
     theme: "btn-back-green",
     name: "HouseMates",
     description:
-      "Full-stack mobile application for users to manage their household tasks",
+      "Cross-platform full-stack mobile application for users to manage their household tasks",
     skills: ["JavaScript", "ReactNative"],
     link: "https://github.com/brandongautama/HouseMates",
   },
