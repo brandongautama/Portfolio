@@ -30,26 +30,28 @@ const About = () => {
               microservices using Java and AWS infrastructure ecosystems.
             </p>
           </div>
-          <div className="flex justify-start items-center py-6">
-            <a href="https://www.linkedin.com/in/brandongautama">
-              <img src={linkedin} className="w-9 h-9 mx-2 ml-0" />
-            </a>
-            <a href="https://github.com/brandongautama">
-              <img src={github} className="w-9 h-9 mx-2" />
-            </a>
-            <CopyToClipboard
-              text="brandongautama15@gmail.com"
-              onCopy={onCopyText}
-            >
-              <img src={gmail} className="w-9 h-9 mx-2 cursor-pointer" />
-            </CopyToClipboard>
-            {copyStatus ? (
-              <span className="ml-1 font-poppins text-blue-500">
-                Email copied!
-              </span>
-            ) : (
-              ""
-            )}
+          <div className="flex flex-wrap justify-left md:justify-start items-center w-full">
+            <span className="flex w-fit justify-center items-center mt-4">
+              <a href="https://www.linkedin.com/in/brandongautama">
+                <img src={linkedin} className="w-8 h-8 mx-2 ml-0" />
+              </a>
+              <a href="https://github.com/brandongautama">
+                <img src={github} className="w-8 h-8 mx-2" />
+              </a>
+              <CopyToClipboard
+                text="brandongautama15@gmail.com"
+                onCopy={onCopyText}
+              >
+                <img src={gmail} className="w-8 h-8 mx-2 cursor-pointer" />
+              </CopyToClipboard>
+              {copyStatus ? (
+                <span className="ml-1 font-poppins italic text-blue-400">
+                  Email copied!
+                </span>
+              ) : (
+                ""
+              )}
+            </span>
           </div>
         </div>
         <div className="sm:flex justify-center md:col-span-2">

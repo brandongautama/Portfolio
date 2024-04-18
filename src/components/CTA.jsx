@@ -9,7 +9,7 @@ const CTA = () => {
         <span className="head-text blue-gradient_text font-semibold drop-shadow">
           Contact
         </span>
-        <br className="sm:block hidden" />
+        <br className="" />
         <span>Feel free to reach out!</span>
       </p>
       {/* <Link to="/contact" className="button"></Link> */}
