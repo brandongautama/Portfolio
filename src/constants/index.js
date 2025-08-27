@@ -222,6 +222,15 @@ export const socialLinks = [
 
 export const projects = [
   {
+    iconUrl: estate,
+    theme: "btn-back-yellow",
+    name: "TaxWise",
+    description:
+      "Investment tax management tool that enables users to track transactions, analyze cumulative tax implications, and use it to simulate various investment scenarios for informed financial decisions",
+    skills: ["JavaScript", "ReactNative"],
+    link: "/TaxWise",
+  },
+  {
     iconUrl: housemateslogo,
     theme: "btn-back-green",
     name: "HouseMates",
@@ -231,7 +240,7 @@ export const projects = [
     link: "https://github.com/brandongautama/HouseMates",
   },
   {
-    iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
+    iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File/Antu_seafile.svg
     theme: "btn-back-blue",
     name: "Cloud-based File Storage Service",
     description:

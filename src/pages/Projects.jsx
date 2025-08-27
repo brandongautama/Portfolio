@@ -65,7 +65,7 @@ const Projects = () => {
                     href={project.link}
                     className="flex flex-row items-center font-semibold text-blue-600"
                   >
-                    Source Code
+                    {project.link.startsWith('http') ? 'Source Code' : 'Website'}
                     <img
                       src={arrow}
                       alt="arrow"

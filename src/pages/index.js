@@ -3,5 +3,6 @@ import About from "./About";
 import Projects from "./Projects";
 import Timeline from "./Timeline";
 import Skills from "./Skills";
+import TaxWise from "./TaxWise";
 
-export { Home, About, Projects, Timeline, Skills };
+export { Home, About, Projects, Timeline, Skills, TaxWise };
