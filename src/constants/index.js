@@ -220,7 +220,7 @@ export const socialLinks = [
   },
 ];
 
-export const projects = [
+export const productionProjects = [
   {
     iconUrl: estate,
     theme: "btn-back-yellow",
@@ -231,6 +231,15 @@ export const projects = [
     link: "/TaxWise",
   },
   {
+    iconUrl: snapgram,
+    theme: "btn-back-blue",
+    name: "Portfolio Website",
+    description:
+      "Professional portfolio website showcasing software engineering experience and projects. Built with React, Tailwind CSS, and modern web technologies, featuring responsive design and optimized performance for seamless user experience.",
+    skills: ["React", "JavaScript", "Tailwind CSS"],
+    link: "https://github.com/brandongautama/Portfolio",
+  },
+  {
     iconUrl: housemateslogo,
     theme: "btn-back-green",
     name: "HouseMates",
@@ -239,6 +248,9 @@ export const projects = [
     skills: ["JavaScript", "ReactNative"],
     link: "https://github.com/brandongautama/HouseMates",
   },
+];
+
+export const technicalProjects = [
   {
     iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
     theme: "btn-back-blue",
@@ -266,3 +278,6 @@ export const projects = [
     link: "https://github.com/brandongautama/Gitlet",
   },
 ];
+
+// Keep the original projects array for backward compatibility if needed elsewhere
+export const projects = [...productionProjects, ...technicalProjects];
