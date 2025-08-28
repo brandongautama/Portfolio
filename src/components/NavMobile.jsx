@@ -3,12 +3,16 @@ import { Squash as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { routes } from "../routes";
 import { useClickAway } from "react-use";
+import { useLocation } from "react-router-dom";
 
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useClickAway(ref, () => setOpen(false));
 
@@ -75,21 +79,31 @@ export const NavMobile = () => {
                       key={route.href}
                       className="mx-2 mb-1 last:mb-0"
                     >
-                      <Link
-                        activeStyle={{ 
-                          color: "#3b82f6",
-                          backgroundColor: "#eff6ff"
-                        }}
-                        to={route.href}
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={300}
-                        className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
-                        onClick={() => setOpen(false)}
-                      >
-                        {route.title}
-                      </Link>
+                      {isHomePage ? (
+                        <ScrollLink
+                          activeStyle={{ 
+                            color: "#3b82f6",
+                            backgroundColor: "#eff6ff"
+                          }}
+                          to={route.href}
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={300}
+                          className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
+                          onClick={() => setOpen(false)}
+                        >
+                          {route.title}
+                        </ScrollLink>
+                      ) : (
+                        <RouterLink
+                          to={`/${route.href}`}
+                          className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
+                          onClick={() => setOpen(false)}
+                        >
+                          {route.title}
+                        </RouterLink>
+                      )}
                     </motion.li>
                   );
                 })}

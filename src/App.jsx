@@ -1,6 +1,7 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import CTA from "./components/CTA";
+import { scroller } from "react-scroll";
 
 import { Home, About, Projects, Timeline, Skills, TaxWise } from "./pages";
 import Navbar from "./components/Navbar";
@@ -19,12 +20,35 @@ const HomePage = () => (
   </>
 );
 
+const ScrollHandler = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if we're on home page and there's a hash in the URL
+    if (location.pathname === "/" && location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the # from hash
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          duration: 300,
+          delay: 0,
+          smooth: true,
+          offset: -70
+        });
+      }, 100);
+    }
+  }, [location]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <main className="bg-slate-300/20">
       <Router>
         <section className="max-container">
           <Navbar />
+          <ScrollHandler />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/TaxWise" element={<TaxWise />} />
