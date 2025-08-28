@@ -14,68 +14,88 @@ export const NavMobile = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
+    
+    // Handle escape key
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        setOpen(false);
+      }
+    };
+    
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen]);
 
   return (
-    <div ref={ref} className=" md:hidden lg:hidden">
+    <div ref={ref} className="lg:hidden">
       <Hamburger
         toggled={isOpen}
-        size={20}
+        size={22}
         toggle={setOpen}
-        color="#0072ff"
+        color={isOpen ? "#3b82f6" : "#0072ff"}
         direction="right"
+        duration={0.4}
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
       />
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl rounded-xl right-0 top-[3.5rem] p-2 mt-4 bg-slate-200/100 border-b border-b-white/20"
-          >
-            <ul className="grid gap-2">
-              {routes.map((route, idx) => {
-                return (
-                  <motion.li
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 260,
-                      damping: 20,
-                      delay: 0.1 + idx / 10,
-                    }}
-                    key={route.href}
-                    className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr bg-white/80 via-neutral-100 to-neutral-100"
-                  >
-                    {/* <a
-                      onClick={() => setOpen((prev) => !prev)}
-                      className={
-                        "flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0"
-                      }
-                      href={route.href}
-                    > */}
-                    <Link
-                      activeStyle={{ color: "#3b82f6" }}
-                      to={route.href}
-                      spy={true}
-                      smooth={true}
-                      offset={-70}
-                      duration={200}
-                      className="flex items-center justify-between w-full p-3 rounded-xl bg-neutral-0 cursor-pointer"
-                      onClick={() => setOpen((prev) => !prev)}
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"
+              onClick={() => setOpen(false)}
+            />
+            
+            {/* Mobile menu */}
+            <motion.nav
+              id="mobile-menu"
+              role="navigation"
+              aria-label="Mobile navigation"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className="fixed left-4 right-4 top-[4.5rem] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden"
+            >
+              <ul className="py-2">
+                {routes.map((route, idx) => {
+                  return (
+                    <motion.li
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: idx * 0.05,
+                        ease: "easeOut"
+                      }}
+                      key={route.href}
+                      className="mx-2 mb-1 last:mb-0"
                     >
-                      <span />
-                      <span className="flex gap-1 text-lg">{route.title}</span>
-                      <span />
-                    </Link>
-                    {/* </a> */}
-                  </motion.li>
-                );
-              })}
-            </ul>
-          </motion.div>
+                      <Link
+                        activeStyle={{ 
+                          color: "#3b82f6",
+                          backgroundColor: "#eff6ff"
+                        }}
+                        to={route.href}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={300}
+                        className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
+                        onClick={() => setOpen(false)}
+                      >
+                        {route.title}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </div>
