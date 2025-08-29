@@ -39,7 +39,7 @@ const Projects = () => {
             );
           })}
         </ul>
-        <div className="mt-5 flex items-center gap-2 font-poppins">
+        <div className="mt-5 flex flex-col gap-2 font-poppins">
           <a
             href={project.link}
             className="flex flex-row items-center font-semibold text-blue-600"
@@ -51,6 +51,26 @@ const Projects = () => {
               className="w-4 h-4 object-contain ml-1"
             />
           </a>
+          {project.isCurrentSite && (
+            <span className="text-sm text-green-600 font-medium">
+              ✨ You're viewing this site right now!
+            </span>
+          )}
+          {project.appStoreLink && (
+            <a
+              href={project.appStoreLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row items-center font-semibold text-blue-600"
+            >
+              App Store
+              <img
+                src={arrow}
+                alt="arrow"
+                className="w-4 h-4 object-contain ml-1"
+              />
+            </a>
+          )}
         </div>
       </div>
     </div>

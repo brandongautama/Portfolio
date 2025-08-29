@@ -229,6 +229,7 @@ export const productionProjects = [
       "iOS investment tax management application that enables users to track transactions, analyze cumulative tax implications, and simulate various investment scenarios for informed financial decisions.",
     skills: ["JavaScript", "ReactNative"],
     link: "/TaxWise",
+    appStoreLink: "https://apps.apple.com/us/app/taxwise-investment-tax-tool/id6751554700",
   },
   {
     iconUrl: snapgram,
@@ -238,7 +239,11 @@ export const productionProjects = [
       "Professional portfolio website showcasing software engineering experience and projects. Built with React, Tailwind CSS, and modern web technologies, featuring responsive design and optimized performance for seamless user experience.",
     skills: ["React", "JavaScript", "Tailwind CSS"],
     link: "https://github.com/brandongautama/Portfolio",
+    isCurrentSite: true,
   },
+];
+
+export const technicalProjects = [
   {
     iconUrl: housemateslogo,
     theme: "btn-back-green",
@@ -248,9 +253,6 @@ export const productionProjects = [
     skills: ["JavaScript", "ReactNative"],
     link: "https://github.com/brandongautama/HouseMates",
   },
-];
-
-export const technicalProjects = [
   {
     iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
     theme: "btn-back-blue",
