@@ -33,6 +33,7 @@ import python from "./python.svg";
 import dynamodb from "./dynamodb.svg";
 import cplusplus from "./cplusplus.svg";
 import amazon from "./amazon.svg";
+import alexa from "./alexa.svg";
 import ucsd from "./ucsd.svg";
 import hku from "./hku.svg";
 import gmail from "./gmail.svg";
@@ -77,6 +78,7 @@ export {
   dynamodb,
   cplusplus,
   amazon,
+  alexa,
   ucsd,
   hku,
   gmail,

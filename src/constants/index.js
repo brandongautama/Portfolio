@@ -31,6 +31,7 @@ import {
   dynamodb,
   cplusplus,
   amazon,
+  alexa,
   ucsd,
   hku,
   housemates,
@@ -122,16 +123,28 @@ export const work_experience = {
   experiences: [
     {
       title: "Software Development Engineer",
-      company_name: "Amazon.com",
-      icon: amazon,
-      iconBg: "#ffe0b3",
-      date: "May 2020 - Present",
+      company_name: "Amazon Web Services",
+      icon: aws,
+      iconBg: "#fff4e6",
+      date: "Oct 2024 - Present",
+      points: [
+        "Architected and maintained multi-tenant data streaming platform (AWS Autoloop) enabling automotive companies to ingest, govern, and distribute high-volume vehicle data at scale with fine-grained access controls across multiple consumers",
+        "Built and scaled distributed microservices solving complex challenges in service resilience, fault tolerance, and cross-service dependency management ensuring high availability and reliability under stress conditions",
+        "Designed and delivered workflow execution engine features for AWS HealthOmics enabling bioinformatics researchers to orchestrate large-scale genomic data processing pipelines across multiple execution engines (WDL, Nextflow, CWL) with automatic infrastructure provisioning and scaling",
+        "Drove operational excellence across teams through proactive health monitoring, standardized observability practices, and streamlined deployment processes improving system reliability and team velocity",
+      ],
+    },
+    {
+      title: "Software Development Engineer",
+      company_name: "Amazon Alexa",
+      icon: alexa,
+      iconBg: "#d4f1ff",
+      date: "May 2020 - Oct 2024",
       points: [
         "Architected and developed cloud orchestration service handling traffic from millions of Alexa multimodal devices worldwide, integrating multiple content providers with intelligent ranking algorithms for optimized content delivery",
         "Built and maintained high-performance multi-tenant distributed systems at scale, solving complex challenges in content aggregation, real-time ranking, and low-latency response delivery",
         "Led technical design and implementation of scalable microservices architecture using Java and AWS infrastructure, ensuring fault tolerance and high availability",
-        "Collaborated with cross-functional teams including product managers and other developers to create high-quality products",
-        "Articulated technical challenges and delivered robust, scalable and supportable solutions within the overall system architecture",
+        "Drove technical solutions within overall system architecture, articulating complex distributed systems challenges and delivering robust, scalable implementations",
       ],
     },
     {
