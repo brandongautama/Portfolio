@@ -17,7 +17,7 @@ const Timeline = ({ id, timeline }) => {
           <p>{timeline.section_description}</p>
         </div>
         <div className="mt-6 flex">
-          <VerticalTimeline>
+          <VerticalTimeline layout="1-column-left">
             {experiences.map((experience) => (
               <VerticalTimelineElement
                 key={`${experience.title}${experience.company_name}`}
