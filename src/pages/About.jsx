@@ -25,7 +25,7 @@ const About = () => {
           <h2 className="subhead-text ">Cloud Software Engineer</h2>
           <div className="mt-5 gap-3 text-slate-500">
             <p>
-              I'm a Software Engineer at Amazon based in the San Francisco Bay Area, architecting highly scalable distributed systems using Java and AWS cloud infrastructure. I hold a Master's in Computer Science from UC San Diego and specialize in backend system design and cloud-native architectures that deliver high performance, reliability, and scale. I'm passionate about technical leadership and building systems that create meaningful impact through scalable, efficient engineering solutions.
+              I'm a Software Engineer at Amazon based in the San Francisco Bay Area. I build distributed systems that hold up under pressure — the kind where traffic spikes 50x overnight and everything still needs to work. At Alexa, I built the cloud service powering content on all Echo Show devices worldwide. At AWS, I'm building data platforms and workflow engines for enterprise customers across genomics and automotive.
             </p>
           </div>
           <div className="flex flex-wrap justify-left md:justify-start items-center w-full">

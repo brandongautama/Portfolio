@@ -128,10 +128,10 @@ export const work_experience = {
       iconBg: "#fff4e6",
       date: "Oct 2024 - Present",
       points: [
-        "Architected and maintained multi-tenant data streaming platform (AWS Autoloop) enabling automotive companies to ingest, govern, and distribute high-volume vehicle data at scale with fine-grained access controls across multiple consumers",
-        "Built and scaled distributed microservices solving complex challenges in service resilience, fault tolerance, and cross-service dependency management ensuring high availability and reliability under stress conditions",
-        "Designed and delivered workflow execution engine features for AWS HealthOmics enabling bioinformatics researchers to orchestrate large-scale genomic data processing pipelines across multiple execution engines (WDL, Nextflow, CWL) with automatic infrastructure provisioning and scaling",
-        "Drove operational excellence across teams through proactive health monitoring, standardized observability practices, and streamlined deployment processes improving system reliability and team velocity",
+        "Led development of multi-tenant data streaming platform (AWS Autoloop) enabling automotive companies to ingest, govern, and distribute vehicle data at scale; coordinated across 4 teams to unblock key enterprise customer launch, driving new revenue stream for AWS",
+        "Delivered 7 workflow execution engine features for AWS HealthOmics across 3 engines, unblocking enterprise customer migration of thousands of workflows to AWS",
+        "Led post-incident analysis for major AWS service outage and designed dependency caching fallback mechanism, reducing service recovery time from hours to seconds and improving resilience against cascading dependency failures",
+        "Reduced deployment cycle by 4x (8 days to 2 days) by optimizing deployment strategy across pipeline waves; built consolidated health monitoring dashboard used daily to proactively identify production issues before customer impact",
       ],
     },
     {
@@ -141,10 +141,11 @@ export const work_experience = {
       iconBg: "#d4f1ff",
       date: "May 2020 - Oct 2024",
       points: [
-        "Architected and developed cloud orchestration service handling traffic from millions of Alexa multimodal devices worldwide, integrating multiple content providers with intelligent ranking algorithms for optimized content delivery",
-        "Built and maintained high-performance multi-tenant distributed systems at scale, solving complex challenges in content aggregation, real-time ranking, and low-latency response delivery",
-        "Led technical design and implementation of scalable microservices architecture using Java and AWS infrastructure, ensuring fault tolerance and high availability",
-        "Drove technical solutions within overall system architecture, articulating complex distributed systems challenges and delivering robust, scalable implementations",
+        "Architected and developed high-availability cloud orchestration service powering content delivery on millions of Alexa Echo Show devices worldwide at 35,000 TPS, integrating multiple content providers with real-time ranking for low-latency response delivery",
+        "Proactively designed and built fault-tolerant retry storm protection with graceful degradation, absorbing 50x traffic surges (3,000 → 150,000 TPS) at 4x faster response time (360ms → 90ms); activated during major AWS outage preventing cascading failures across 5+ services",
+        "Drove redesign of distributed state synchronization between cloud and device using pending transaction pattern, eliminating state inconsistencies, deadlocks, and out-of-sync failures across async workflows serving millions of devices",
+        "Built scalable experimentation infrastructure decoupling experiment configuration from service code, enabling product managers to independently deploy A/B tests across all devices, reducing setup time from 2-3 days to under 10 minutes",
+        "Mentored 2 interns and onboarded 3 team members; designed oncall pattern analysis mechanism adopted across multiple teams, systematically reducing high-severity ticket volume by 40%",
       ],
     },
     {
@@ -165,9 +166,7 @@ export const work_experience = {
       iconBg: "#ffe0b3",
       date: "Jun 2019 - Sep 2019",
       points: [
-        "Designed, developed and tested full-stack software solution for on-device test management service, delivering end-to-end functionality for device testing workflows",
-        "Implemented scalable backend RESTful web service using Python and Flask, ensuring robust API performance and data handling",
-        "Developed responsive user interface using HTML, CSS and JavaScript, creating intuitive user experience for test management operations",
+        "Designed and developed RESTful APIs and web interface for on-device test management service, enabling developers to run automated health checks across device fleets",
       ],
     },
   ],
@@ -185,7 +184,7 @@ export const education = {
       date: "Sep 2018 - Mar 2020",
       points: [
         "Master of Science in Computer Science, 3.96 GPA",
-        "Specialized in Distributed Systems, Communication Networks, Operating Systems, Compiler Design, and Software Engineering",
+        "Specialized in Distributed Systems, Communication Networks, Operating Systems",
       ],
     },
     {
