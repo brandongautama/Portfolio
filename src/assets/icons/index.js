@@ -41,6 +41,7 @@ import housemates from "./housemates.png";
 import housemateslogo from "./housemateslogo.svg";
 import surfstore from "./surfstore.svg";
 import raft from "./raft.svg";
+import aiagents from "./ai-agents.svg";
 
 export {
   css,
@@ -86,4 +87,5 @@ export {
   housemateslogo,
   surfstore,
   raft,
+  aiagents,
 };

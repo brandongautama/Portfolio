@@ -38,6 +38,7 @@ import {
   housemateslogo,
   surfstore,
   raft,
+  aiagents,
 } from "../assets/icons";
 
 export const skills = [
@@ -256,6 +257,16 @@ export const productionProjects = [
 ];
 
 export const technicalProjects = [
+  {
+    iconUrl: aiagents,
+    theme: "btn-back-purple",
+    name: "Autonomous Pair Programming",
+    iconSize: "w-3/4 h-3/4",
+    description:
+      "Multi-agent AI system where Driver and Navigator agents autonomously debate and refine code quality through adversarial review loops before human review. Navigator acts as devil's advocate, enforcing best practices and catching issues that single-agent LLMs miss. Built as an MCP tool with self-improving quality gates that evolve from real code review feedback.",
+    skills: ["Python", "MCP", "AI Agents"],
+    link: "",
+  },
   {
     iconUrl: housemateslogo,
     theme: "btn-back-green",

@@ -17,7 +17,7 @@ const Projects = () => {
           <img
             src={project.iconUrl}
             alt="Project Icon"
-            className="w-1/2 h-1/2 object-contain"
+            className={`${project.iconSize || 'w-1/2 h-1/2'} object-contain`}
           />
         </div>
       </div>
@@ -40,6 +40,7 @@ const Projects = () => {
           })}
         </ul>
         <div className="mt-5 flex flex-col gap-2 font-poppins">
+          {project.link && (
           <a
             href={project.link}
             className="flex flex-row items-center font-semibold text-blue-600"
@@ -51,6 +52,7 @@ const Projects = () => {
               className="w-4 h-4 object-contain ml-1"
             />
           </a>
+          )}
           {project.isCurrentSite && (
             <span className="text-sm text-green-600 font-medium">
               ✨ You're viewing this site right now!
