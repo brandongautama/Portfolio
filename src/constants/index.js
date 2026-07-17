@@ -129,10 +129,12 @@ export const work_experience = {
       iconBg: "#fff4e6",
       date: "Oct 2024 - Present",
       points: [
-        "Led development of multi-tenant data streaming platform (AWS Autoloop) enabling automotive companies to ingest, govern, and distribute vehicle data at scale; coordinated across 4 teams to unblock key enterprise customer launch, driving new revenue stream for AWS",
-        "Delivered 7 workflow execution engine features for AWS HealthOmics across 3 engines, unblocking enterprise customer migration of thousands of workflows to AWS",
-        "Led post-incident analysis for major AWS service outage and designed dependency caching fallback mechanism, reducing service recovery time from hours to seconds and improving resilience against cascading dependency failures",
-        "Reduced deployment cycle by 4x (8 days to 2 days) by optimizing deployment strategy across pipeline waves; built consolidated health monitoring dashboard used daily to proactively identify production issues before customer impact",
+        "Designed and built system to parallelize S3 directory imports across AWS HealthOmics workflow engines (WDL, CWL, Nextflow), splitting single-node transfers into multiple concurrent tasks across shared filesystem; reduced 4 TiB imports from 75 minutes to 8 minutes (9x faster), saving 9,500+ customer-hours annually",
+        "Architected multi-cell platform for AWS HealthOmics, splitting control and data planes across dedicated AWS accounts; scaled service capacity from 40K to 240K concurrent tasks (6x), enabling dedicated cells for top enterprise customers",
+        "Led root-cause analysis for major AWS service outage and designed dependency caching fallback, cutting recovery time from hours to seconds and preventing cascading failures across 5+ downstream services",
+        "Designed code intelligence platform mapping components to tests and pipeline history, enabling blast radius analysis on every code review; cut release cycle from 27 days to 7 days (4x faster)",
+        "Led development of multi-tenant data streaming platform (AWS Autoloop) enabling automotive OEMs to ingest, govern, and distribute vehicle telemetry across AWS; coordinated across 4 teams and unblocked flagship enterprise customer launch",
+        "Reduced deployment cycle by 4x (8 days to 2 days) by parallelizing regional pipeline waves; built consolidated health monitoring dashboard used daily to detect production issues before customer impact",
       ],
     },
     {
