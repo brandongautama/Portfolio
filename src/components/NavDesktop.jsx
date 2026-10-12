@@ -1,7 +1,7 @@
 import { routes } from "../routes";
 import { useLocation } from "react-router-dom";
 
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
 export const NavDesktop = () => {
@@ -9,31 +9,28 @@ export const NavDesktop = () => {
   const isHomePage = location.pathname === "/";
   return (
     <nav role="navigation" aria-label="Main navigation">
-      <ul className="hidden lg:flex lg:items-center gap-5">
+      <ul className="hidden md:flex md:items-center gap-5 text-sm">
         {routes.map((route) => {
           const { href, title } = route;
           return (
             <li key={route.title} className="cursor-pointer">
               {isHomePage ? (
                 <ScrollLink
-                  activeStyle={{ 
-                    color: "#3b82f6",
-                    borderBottom: "2px solid #3b82f6",
-                    paddingBottom: "2px"
-                  }}
+                  activeClass="!text-ink"
                   to={href}
+                  href={`#${href}`}
                   spy={true}
                   smooth={true}
                   offset={-70}
-                  duration={300}
-                  className="flex items-center gap-1 hover:text-neutral-400 transition-all font-poppins pb-1 border-b-2 border-transparent hover:border-neutral-300"
+                  duration={200}
+                  className="text-ink-muted transition hover:text-ink rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
                 >
                   {title}
                 </ScrollLink>
               ) : (
                 <RouterLink
-                  to={`/${href}`}
-                  className="flex items-center gap-1 hover:text-neutral-400 transition-all font-poppins pb-1 border-b-2 border-transparent hover:border-neutral-300"
+                  to={`/#${href}`}
+                  className="text-ink-muted transition hover:text-ink rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
                 >
                   {title}
                 </RouterLink>

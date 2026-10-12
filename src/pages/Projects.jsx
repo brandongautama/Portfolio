@@ -1,100 +1,57 @@
-// import { Link } from "react-router-dom";
-
-import CTA from "../components/CTA";
 import { projects } from "../constants";
-import { arrow } from "../assets/icons";
-import { Fragment } from "react";
+import Section from "../components/Section";
 
-const Projects = () => {
-  const renderProjectCard = (project) => (
-    <div
-      className="lg:w-[400px] w-full bg-white border-2 p-4 pt-8 rounded-xl glassmorphism logo"
-      key={project.name}
-    >
-      <div className="block-container w-12 h-12">
-        <div className={`btn-back rounded-xl ${project.theme}`} />
-        <div className="btn-front rounded-xl flex justify-center items-center">
-          <img
-            src={project.iconUrl}
-            alt="Project Icon"
-            className={`${project.iconSize || 'w-1/2 h-1/2'} object-contain`}
-          />
-        </div>
-      </div>
-
-      <div className="mt-5 flex flex-col">
-        <h4 className="text-2xl font-poppins font-semibold">
-          {project.name}
-        </h4>
-        <p className="mt-2 text-slate-500">{project.description}</p>
-        <ul className="flex mt-2 font-poppins">
-          {project.skills?.map((skill, id) => {
-            return (
-              <li
-                key={id}
-                className="border-2 rounded-3xl border-slate-500 text-slate-500 py-0.5 px-2 mx-0.5 text-xs"
-              >
-                {skill}
-              </li>
-            );
-          })}
-        </ul>
-        <div className="mt-5 flex flex-col gap-2 font-poppins">
-          {project.link && (
-          <a
-            href={project.link}
-            className="flex flex-row items-center font-semibold text-blue-600"
-          >
-            {project.link.startsWith('http') ? 'Source Code' : 'Website'}
-            <img
-              src={arrow}
-              alt="arrow"
-              className="w-4 h-4 object-contain ml-1"
-            />
-          </a>
-          )}
-          {project.isCurrentSite && (
-            <span className="text-sm text-green-600 font-medium">
-              ✨ You're viewing this site right now!
-            </span>
-          )}
-          {project.appStoreLink && (
-            <a
-              href={project.appStoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row items-center font-semibold text-blue-600"
-            >
-              App Store
-              <img
-                src={arrow}
-                alt="arrow"
-                className="w-4 h-4 object-contain ml-1"
-              />
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
+const ProjectLink = ({ href, children }) => {
+  const external = href.startsWith("http");
   return (
-    <section id="#projects">
-      {/* Introduction */}
-      <div className="py-10">
-        <h1 className="head-text">
-          My{" "}
-          <span className="blue-gradient_text font-semibold drop-shadow">
-            Projects
-          </span>
-        </h1>
-
-        <div className="mt-12 flex flex-wrap gap-16 gap-y-8">
-          {projects.map(renderProjectCard)}
-        </div>
-      </div>
-    </section>
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel="noopener noreferrer"
+      className="text-sm text-link"
+    >
+      {children}
+      {external ? " ↗" : " →"}
+    </a>
   );
 };
+
+const Projects = () => (
+  <Section id="projects" label="Projects">
+    <div className="grid gap-4 sm:grid-cols-2">
+      {projects.map((project) => (
+        <article
+          key={project.name}
+          className="flex flex-col rounded-xl border border-hairline bg-white p-5 transition hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-hairline">
+              <img src={project.iconUrl} alt="" className={`${project.iconSize || "h-7 w-7"} object-contain`} />
+            </div>
+            <h3 className="font-medium text-ink">{project.name}</h3>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+            {project.description}
+          </p>
+          <p className="mt-3 font-mono text-xs text-ink-faint">
+            {project.skills.join(" · ")}
+          </p>
+          {(project.link || project.appStoreLink) && (
+            <div className="mt-auto flex gap-4 pt-4">
+              {project.link && (
+                <ProjectLink href={project.link}>
+                  {project.link.startsWith("http") ? "Source" : "Website"}
+                </ProjectLink>
+              )}
+              {project.appStoreLink && (
+                <ProjectLink href={project.appStoreLink}>App Store</ProjectLink>
+              )}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </Section>
+);
 
 export default Projects;

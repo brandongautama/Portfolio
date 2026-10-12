@@ -1,9 +1,9 @@
-import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
-import Timeline from "./Timeline";
+import Experience from "./Experience";
 import Skills from "./Skills";
 import TaxWise from "./TaxWise";
 import Writing from "./Writing";
+import NotFound from "./NotFound";
 
-export { Home, About, Projects, Timeline, Skills, TaxWise, Writing };
+export { About, Projects, Experience, Skills, TaxWise, Writing, NotFound };

@@ -1,22 +1,23 @@
 import { NavLink } from "react-router-dom";
 
-import { routes } from "../routes";
 import { NavMobile } from "./NavMobile";
 import { NavDesktop } from "./NavDesktop";
 
 const Navbar = () => {
   return (
-    <header className="header">
-      <NavLink
-        to="/"
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-        aria-label="Go to homepage"
-      >
-        <p className="blue-gradient_text">BG</p>
-      </NavLink>
-      <div className="flex text-lg font-medium">
-        <NavMobile />
-        <NavDesktop />
+    <header className="sticky top-0 z-30 border-b border-hairline bg-canvas/80 backdrop-blur">
+      <div className="mx-auto flex h-14 max-w-[768px] items-center justify-between px-6">
+        <NavLink
+          to="/"
+          className="font-medium tracking-tight text-ink transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded-sm"
+          aria-label="Go to homepage"
+        >
+          Brandon Gautama
+        </NavLink>
+        <div className="flex items-center">
+          <NavMobile />
+          <NavDesktop />
+        </div>
       </div>
     </header>
   );

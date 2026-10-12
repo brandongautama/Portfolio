@@ -47,6 +47,7 @@ import csharp from "./csharp.svg";
 import grpc from "./grpc.svg";
 import mcp from "./mcp.svg";
 import berkeley from "./berkeley.svg";
+import taxwiseicon from "./taxwise-icon.png";
 
 export {
   css,
@@ -98,4 +99,5 @@ export {
   grpc,
   mcp,
   berkeley,
+  taxwiseicon,
 };

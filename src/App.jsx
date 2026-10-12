@@ -3,22 +3,20 @@ import { Route, BrowserRouter as Router, Routes, useLocation } from "react-route
 import CTA from "./components/CTA";
 import { scroller } from "react-scroll";
 
-import { Home, About, Projects, Timeline, Skills, TaxWise, Writing } from "./pages";
+import { About, Projects, Experience, Skills, TaxWise, Writing, NotFound } from "./pages";
 import Navbar from "./components/Navbar";
-import { routes } from "./routes";
 import { work_experience, education } from "./constants";
 
 const HomePage = () => (
-  <>
+  <div className="mx-auto max-w-[720px]">
     <About />
-    <Timeline id={"#work_experience"} timeline={work_experience} />
+    <Experience id="work_experience" label="Experience" timeline={work_experience} highlightResults />
     <Writing />
     <Projects />
     <Skills />
-    <Timeline id={"#education"} timeline={education} />
-    <hr className="border-slate-200" />
+    <Experience id="education" label="Education" timeline={education} stacked />
     <CTA />
-  </>
+  </div>
 );
 
 const ScrollHandler = () => {
@@ -31,7 +29,7 @@ const ScrollHandler = () => {
       // Small delay to ensure the page has rendered
       setTimeout(() => {
         scroller.scrollTo(sectionId, {
-          duration: 300,
+          duration: 200,
           delay: 0,
           smooth: true,
           offset: -70
@@ -45,18 +43,23 @@ const ScrollHandler = () => {
 
 const App = () => {
   return (
-    <main className="bg-slate-300/20">
-      <Router>
-        <section className="max-container">
-          <Navbar />
-          <ScrollHandler />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/TaxWise" element={<TaxWise />} />
-          </Routes>
-        </section>
-      </Router>
-    </main>
+    <Router>
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-50 focus:rounded focus:bg-canvas focus:px-3 focus:py-2 focus:text-sm"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="content" className="max-container">
+        <ScrollHandler />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/TaxWise" element={<TaxWise />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+    </Router>
   );
 };
 

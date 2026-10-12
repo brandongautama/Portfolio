@@ -5,7 +5,7 @@ import { routes } from "../routes";
 import { useClickAway } from "react-use";
 import { useLocation } from "react-router-dom";
 
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
 export const NavMobile = () => {
@@ -31,15 +31,15 @@ export const NavMobile = () => {
   }, [isOpen]);
 
   return (
-    <div ref={ref} className="lg:hidden">
+    <div ref={ref} className="-mr-3.5 md:hidden">
       <Hamburger
         toggled={isOpen}
-        size={22}
+        size={20}
         toggle={setOpen}
-        color={isOpen ? "#3b82f6" : "#0072ff"}
+        color="#1F2328"
         direction="right"
         duration={0.4}
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        label={isOpen ? "Close navigation menu" : "Open navigation menu"}
       />
       <AnimatePresence>
         {isOpen && (
@@ -50,7 +50,7 @@ export const NavMobile = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/5 z-40"
               onClick={() => setOpen(false)}
             />
             
@@ -63,7 +63,7 @@ export const NavMobile = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
-              className="fixed left-4 right-4 top-[4.5rem] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden"
+              className="fixed left-4 right-4 top-16 bg-white rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-hairline z-50 overflow-hidden"
             >
               <ul className="py-2">
                 {routes.map((route, idx) => {
@@ -81,24 +81,22 @@ export const NavMobile = () => {
                     >
                       {isHomePage ? (
                         <ScrollLink
-                          activeStyle={{ 
-                            color: "#3b82f6",
-                            backgroundColor: "#eff6ff"
-                          }}
+                          activeClass="!text-ink bg-canvas"
                           to={route.href}
+                          href={`#${route.href}`}
                           spy={true}
                           smooth={true}
                           offset={-70}
-                          duration={300}
-                          className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
+                          duration={200}
+                          className="flex items-center w-full px-4 py-3 text-ink-muted text-base rounded-lg cursor-pointer hover:bg-canvas hover:text-ink transition active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
                           onClick={() => setOpen(false)}
                         >
                           {route.title}
                         </ScrollLink>
                       ) : (
                         <RouterLink
-                          to={`/${route.href}`}
-                          className="flex items-center w-full px-4 py-4 text-gray-700 font-poppins font-medium text-base rounded-xl cursor-pointer hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 active:scale-[0.98]"
+                          to={`/#${route.href}`}
+                          className="flex items-center w-full px-4 py-3 text-ink-muted text-base rounded-lg cursor-pointer hover:bg-canvas hover:text-ink transition active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
                           onClick={() => setOpen(false)}
                         >
                           {route.title}

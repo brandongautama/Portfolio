@@ -1,116 +1,23 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
-  car,
-  contact,
-  css,
-  estate,
-  express,
-  git,
   github,
-  html,
-  javascript,
-  linkedin,
-  mongodb,
-  motion,
-  mui,
-  nextjs,
-  nodejs,
-  pricewise,
-  react,
-  redux,
-  sass,
-  snapgram,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript,
-  java,
   aws,
-  rest,
-  python,
-  dynamodb,
-  cplusplus,
   amazon,
   alexa,
   ucsd,
   hku,
-  housemates,
-  housemateslogo,
   surfstore,
   raft,
   aiagents,
   roblox,
-  csharp,
-  grpc,
-  mcp,
   berkeley,
+  taxwiseicon,
 } from "../assets/icons";
 
-export const skills = [
-  // Backend & Cloud (Core Strengths)
-  {
-    imageUrl: java,
-    name: "Java",
-    type: "Backend & Cloud",
-  },
-  {
-    imageUrl: python,
-    name: "Python",
-    type: "Backend & Cloud",
-  },
-  {
-    imageUrl: csharp,
-    name: "C#",
-    type: "Backend & Cloud",
-  },
-  {
-    imageUrl: aws,
-    name: "AWS",
-    type: "Backend & Cloud",
-  },
-  {
-    imageUrl: dynamodb,
-    name: "DynamoDB",
-    type: "Backend & Cloud",
-  },
-  // Distributed Systems & APIs
-  {
-    imageUrl: grpc,
-    name: "gRPC",
-    type: "Distributed Systems",
-  },
-  {
-    imageUrl: rest,
-    name: "RESTful APIs",
-    type: "Distributed Systems",
-  },
-  // AI Engineering
-  {
-    imageUrl: mcp,
-    name: "MCP / AI Agents",
-    type: "AI Engineering",
-  },
-  // Full-Stack
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Full-Stack",
-  },
-  {
-    imageUrl: react,
-    name: "React",
-    type: "Full-Stack",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Full-Stack",
-  },
-  {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Full-Stack",
-  },
+export const skillGroups = [
+  { label: "Languages", items: ["Java", "Python", "C#", "TypeScript", "JavaScript"] },
+  { label: "Backend", items: ["AWS", "DynamoDB", "gRPC", "REST", "Node.js"] },
+  { label: "AI", items: ["MCP", "AI agents", "Bedrock"] },
+  { label: "Frontend", items: ["React", "React Native"] },
 ];
 
 export const highlights = [
@@ -148,8 +55,7 @@ export const work_experience = {
       title: "Senior Software Engineer",
       company_name: "Roblox",
       icon: roblox,
-      iconBg: "#e2e8f0",
-      date: "Sep 2026 - Present",
+      date: "Sep 2026 – Present",
       points: [
         "Build backend services for the Roblox Avatar Marketplace, where users browse and buy avatar items, bundles and Looks, as high-traffic C#/.NET microservices behind REST and gRPC APIs",
         "Develop the personalization pipeline behind the shop's recommendation rows, an experiment-driven fetch, rank and filter flow that calls ML ranking services and is tuned through A/B tests",
@@ -160,8 +66,7 @@ export const work_experience = {
       title: "Software Development Engineer",
       company_name: "Amazon Web Services",
       icon: aws,
-      iconBg: "#fff4e6",
-      date: "Oct 2024 - Sep 2026",
+      date: "Oct 2024 – Sep 2026",
       points: [
         "Designed and built system to parallelize S3 directory imports across AWS HealthOmics workflow engines (WDL, CWL, Nextflow), splitting single-node transfers into multiple concurrent tasks across shared filesystem; reduced 4 TiB imports from 75 minutes to 8 minutes (9x faster), saving 9,500+ customer-hours annually",
         "Architected multi-cell platform for AWS HealthOmics, splitting control and data planes across dedicated AWS accounts; scaled service capacity from 40K to 240K concurrent tasks (6x), enabling dedicated cells for top enterprise customers",
@@ -175,8 +80,7 @@ export const work_experience = {
       title: "Software Development Engineer",
       company_name: "Amazon Alexa",
       icon: alexa,
-      iconBg: "#d4f1ff",
-      date: "May 2020 - Oct 2024",
+      date: "May 2020 – Oct 2024",
       points: [
         "Architected and developed high-availability cloud orchestration service powering content delivery on millions of Alexa Echo Show devices worldwide at 35,000 TPS, integrating multiple content providers with real-time ranking for low-latency response delivery",
         "Proactively designed and built fault-tolerant retry storm protection with graceful degradation, absorbing 50x traffic surges (3,000 → 150,000 TPS) at 4x faster response time (360ms → 90ms); activated during major AWS outage preventing cascading failures across 5+ services",
@@ -189,8 +93,7 @@ export const work_experience = {
       title: "Teaching Assistant",
       company_name: "University of California, San Diego",
       icon: ucsd,
-      iconBg: "#a2d2ff",
-      date: "Sep 2019 - Mar 2020",
+      date: "Sep 2019 – Mar 2020",
       points: [
         "Teaching Assistant for networking courses CSE 224 (Networked Systems, graduate) and CSE 124 (Networked Services); ran discussion sections and grading for 100+ students",
       ],
@@ -199,8 +102,7 @@ export const work_experience = {
       title: "Software Development Engineer Intern",
       company_name: "Amazon.com",
       icon: amazon,
-      iconBg: "#ffe0b3",
-      date: "Jun 2019 - Sep 2019",
+      date: "Jun 2019 – Sep 2019",
       points: [
         "Designed and developed RESTful APIs and web interface for on-device test management service, enabling developers to run automated health checks across device fleets",
       ],
@@ -216,8 +118,7 @@ export const education = {
       title: "University of California, San Diego",
       company_name: "Master of Science, Major in Computer Science",
       icon: ucsd,
-      iconBg: "#a2d2ff",
-      date: "Sep 2018 - Mar 2020",
+      date: "Sep 2018 – Mar 2020",
       points: [
         "Master of Science in Computer Science, 3.96 GPA",
         "Specialized in Distributed Systems, Communication Networks, Operating Systems",
@@ -228,8 +129,7 @@ export const education = {
       company_name:
         "Bachelor of Engineering, Major in Electrical Engineering and Minor in Finance",
       icon: hku,
-      iconBg: "#b7e4c7",
-      date: "Sep 2014 - Jun 2018",
+      date: "Sep 2014 – Jun 2018",
       points: [
         "Bachelor of Engineering in Electrical Engineering with Finance Minor, 3.87 GPA (First Class Honors)",
         "Academic Recognition: Dean's Honors List, IET Outstanding Electrical Power and Energy Engineering Student Award",
@@ -240,8 +140,7 @@ export const education = {
       title: "University of California, Berkeley",
       company_name: "Summer Exchange in Computer Science",
       icon: berkeley,
-      iconBg: "#cbcbf9",
-      date: "Jun 2015 - Aug 2015",
+      date: "Jun 2015 – Aug 2015",
       points: [
         "Summer Exchange Program in Computer Science, 3.85 GPA",
         "Advanced Coursework: Algorithms and Data Structures, Computer Architecture, Object-Oriented Programming",
@@ -253,18 +152,17 @@ export const education = {
 export const projects = [
   {
     iconUrl: aiagents,
-    theme: "btn-back-purple",
     name: "Autonomous Pair Programming",
-    iconSize: "w-3/4 h-3/4",
+    iconSize: "h-9 w-9",
     description:
       "Multi-agent code review system built as an MCP tool. A Driver agent writes the change and a Navigator agent plays devil's advocate, and the two debate in adversarial review loops until the code holds up, so the human reviewer starts from a cleaner draft. Quality gates are self-improving, evolving from real code review feedback. Presented internally.",
     skills: ["Python", "MCP", "AI Agents"],
     link: "",
   },
   {
-    iconUrl: estate,
-    theme: "btn-back-yellow",
+    iconUrl: taxwiseicon,
     name: "TaxWise",
+    iconSize: "h-9 w-9",
     description:
       "iOS investment tax management application that enables users to track transactions, analyze cumulative tax implications, and simulate investment scenarios.",
     skills: ["JavaScript", "React Native"],
@@ -273,7 +171,6 @@ export const projects = [
   },
   {
     iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
-    theme: "btn-back-blue",
     name: "SurfStore",
     description:
       "Distributed cloud file storage service with geographic replication and fault-tolerant architecture using consensus algorithms.",
@@ -282,21 +179,11 @@ export const projects = [
   },
   {
     iconUrl: raft,
-    theme: "btn-back-black",
     name: "RAFT Protocol",
     description:
       "Implementation of RAFT distributed consensus algorithm for fault-tolerant distributed systems. Built robust leader election and log replication mechanisms to ensure data consistency across distributed nodes in network partition scenarios.",
     skills: ["Python", "RPC", "AWS"],
     link: "https://github.com/brandongautama/RAFT",
-  },
-  {
-    iconUrl: housemateslogo,
-    theme: "btn-back-green",
-    name: "HouseMates",
-    description:
-      "Cross-platform mobile application for household task management with real-time synchronization across multiple users. Built full-stack solution using React Native frontend, Node.js backend, and a cloud database.",
-    skills: ["JavaScript", "React Native"],
-    link: "https://github.com/brandongautama/HouseMates",
   },
 ];
 
