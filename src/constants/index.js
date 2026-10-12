@@ -39,6 +39,10 @@ import {
   surfstore,
   raft,
   aiagents,
+  roblox,
+  csharp,
+  grpc,
+  mcp,
 } from "../assets/icons";
 
 export const skills = [
@@ -46,6 +50,16 @@ export const skills = [
   {
     imageUrl: java,
     name: "Java",
+    type: "Backend & Cloud",
+  },
+  {
+    imageUrl: python,
+    name: "Python",
+    type: "Backend & Cloud",
+  },
+  {
+    imageUrl: csharp,
+    name: "C#",
     type: "Backend & Cloud",
   },
   {
@@ -58,63 +72,62 @@ export const skills = [
     name: "DynamoDB",
     type: "Backend & Cloud",
   },
+  // Distributed Systems & APIs
   {
-    imageUrl: python,
-    name: "Python",
-    type: "Backend & Cloud",
+    imageUrl: grpc,
+    name: "gRPC",
+    type: "Distributed Systems",
   },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend & Cloud",
-  },
-  // Distributed Systems & Architecture
   {
     imageUrl: rest,
     name: "RESTful APIs",
     type: "Distributed Systems",
   },
-  // Development Tools & Practices
+  // AI Engineering
   {
-    imageUrl: git,
-    name: "Git",
-    type: "Development Tools",
+    imageUrl: mcp,
+    name: "MCP / AI Agents",
+    type: "AI Engineering",
   },
+  // Full-Stack
   {
-    imageUrl: github,
-    name: "GitHub",
-    type: "Development Tools",
-  },
-  // Frontend & Full-Stack
-  {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend & Full-Stack",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Frontend & Full-Stack",
+    imageUrl: nodejs,
+    name: "Node.js",
+    type: "Full-Stack",
   },
   {
     imageUrl: react,
     name: "React",
-    type: "Frontend & Full-Stack",
+    type: "Full-Stack",
   },
   {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend & Full-Stack",
+    imageUrl: typescript,
+    name: "TypeScript",
+    type: "Full-Stack",
   },
   {
-    imageUrl: css,
-    name: "CSS",
-    type: "Frontend & Full-Stack",
+    imageUrl: javascript,
+    name: "JavaScript",
+    type: "Full-Stack",
+  },
+];
+
+export const highlights = [
+  {
+    metric: "50x",
+    label: "Traffic spike absorbed during a major AWS outage (3,000 → 150,000 TPS)",
   },
   {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend & Full-Stack",
+    metric: "35,000 TPS",
+    label: "Cloud orchestration serving content on millions of Echo Show devices",
+  },
+  {
+    metric: "6x",
+    label: "AWS HealthOmics capacity, from 40K to 240K concurrent tasks",
+  },
+  {
+    metric: "9x",
+    label: "Faster 4 TiB genomics imports, from 75 minutes to 8 minutes",
   },
 ];
 
@@ -123,14 +136,28 @@ export const work_experience = {
   section_description: "",
   experiences: [
     {
+      title: "Senior Software Engineer",
+      company_name: "Roblox",
+      icon: roblox,
+      iconBg: "#e2e8f0",
+      date: "Sep 2026 - Present",
+      points: [
+        "Build and operate backend services for the Roblox Avatar Marketplace (avatar items, bundles and Looks), including the personalized, ML-ranked rows on the shop's landing page, in C#/.NET behind REST and gRPC APIs",
+        "Unblocked a cross-team product launch by keeping a new type of user-generated look out of Marketplace search and recommendations, after tracing every path into them and shipping a guarded indexer change",
+        "Removed blank tiles from the shop's themed recommendation rows by moving moderation-visibility filtering into the ranking pipeline as a reusable, tested filter, designed with the partner ML team",
+        "Cut ramp-up on a complex multi-service domain by writing an onboarding guide and building AI-assisted engineering workflows (Claude Code skills for investigation, testing and deploy monitoring)",
+      ],
+    },
+    {
       title: "Software Development Engineer",
       company_name: "Amazon Web Services",
       icon: aws,
       iconBg: "#fff4e6",
-      date: "Oct 2024 - Present",
+      date: "Oct 2024 - Sep 2026",
       points: [
         "Designed and built system to parallelize S3 directory imports across AWS HealthOmics workflow engines (WDL, CWL, Nextflow), splitting single-node transfers into multiple concurrent tasks across shared filesystem; reduced 4 TiB imports from 75 minutes to 8 minutes (9x faster), saving 9,500+ customer-hours annually",
         "Architected multi-cell platform for AWS HealthOmics, splitting control and data planes across dedicated AWS accounts; scaled service capacity from 40K to 240K concurrent tasks (6x), enabling dedicated cells for top enterprise customers",
+        "Built a self-improving AI oncall triage agent (Lambda, CloudWatch, DynamoDB, Bedrock) that diagnoses new tickets from logs and past resolutions; cut triage from 20-30 minutes to 2 minutes and raised tickets resolved per week from 10 to 25",
         "Led root-cause analysis for major AWS service outage and designed dependency caching fallback, cutting recovery time from hours to seconds and preventing cascading failures across 5+ downstream services",
         "Designed code intelligence platform mapping components to tests and pipeline history, enabling blast radius analysis on every code review; cut release cycle from 27 days to 7 days (4x faster)",
         "Led development of multi-tenant data streaming platform (AWS Autoloop) enabling automotive OEMs to ingest, govern, and distribute vehicle telemetry across AWS; coordinated across 4 teams and unblocked flagship enterprise customer launch",
@@ -217,25 +244,17 @@ export const education = {
   ],
 };
 
-export const socialLinks = [
+export const projects = [
   {
-    name: "Contact",
-    iconUrl: contact,
-    link: "/contact",
+    iconUrl: aiagents,
+    theme: "btn-back-purple",
+    name: "Autonomous Pair Programming",
+    iconSize: "w-3/4 h-3/4",
+    description:
+      "Multi-agent code review system built as an MCP tool. A Driver agent writes the change and a Navigator agent plays devil's advocate, and the two debate in adversarial review loops until the code holds up, so the human reviewer starts from a cleaner draft. Quality gates are self-improving, evolving from real code review feedback. Presented internally.",
+    skills: ["Python", "MCP", "AI Agents"],
+    link: "",
   },
-  {
-    name: "GitHub",
-    iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
-  },
-  {
-    name: "LinkedIn",
-    iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
-  },
-];
-
-export const productionProjects = [
   {
     iconUrl: estate,
     theme: "btn-back-yellow",
@@ -245,38 +264,6 @@ export const productionProjects = [
     skills: ["JavaScript", "ReactNative"],
     link: "/TaxWise",
     appStoreLink: "https://apps.apple.com/us/app/taxwise-investment-tax-tool/id6751554700",
-  },
-  {
-    iconUrl: snapgram,
-    theme: "btn-back-blue",
-    name: "Portfolio Website",
-    description:
-      "Professional portfolio website showcasing software engineering experience and projects. Built with React, Tailwind CSS, and modern web technologies, featuring responsive design and optimized performance for seamless user experience.",
-    skills: ["React", "JavaScript", "Tailwind CSS"],
-    link: "https://github.com/brandongautama/Portfolio",
-    isCurrentSite: true,
-  },
-];
-
-export const technicalProjects = [
-  {
-    iconUrl: aiagents,
-    theme: "btn-back-purple",
-    name: "Autonomous Pair Programming",
-    iconSize: "w-3/4 h-3/4",
-    description:
-      "Multi-agent AI system where Driver and Navigator agents autonomously debate and refine code quality through adversarial review loops before human review. Navigator acts as devil's advocate, enforcing best practices and catching issues that single-agent LLMs miss. Built as an MCP tool with self-improving quality gates that evolve from real code review feedback.",
-    skills: ["Python", "MCP", "AI Agents"],
-    link: "",
-  },
-  {
-    iconUrl: housemateslogo,
-    theme: "btn-back-green",
-    name: "HouseMates",
-    description:
-      "Cross-platform mobile application for household task management with real-time synchronization across multiple users. Built full-stack solution using React Native frontend, Node.js backend, and cloud database architecture for seamless collaboration.",
-    skills: ["JavaScript", "ReactNative"],
-    link: "https://github.com/brandongautama/HouseMates",
   },
   {
     iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
@@ -297,6 +284,15 @@ export const technicalProjects = [
     link: "https://github.com/brandongautama/RAFT",
   },
   {
+    iconUrl: housemateslogo,
+    theme: "btn-back-green",
+    name: "HouseMates",
+    description:
+      "Cross-platform mobile application for household task management with real-time synchronization across multiple users. Built full-stack solution using React Native frontend, Node.js backend, and cloud database architecture for seamless collaboration.",
+    skills: ["JavaScript", "ReactNative"],
+    link: "https://github.com/brandongautama/HouseMates",
+  },
+  {
     iconUrl: github,
     theme: "btn-back-pink",
     name: "Gitlet",
@@ -305,6 +301,3 @@ export const technicalProjects = [
     link: "https://github.com/brandongautama/Gitlet",
   },
 ];
-
-// Keep the original projects array for backward compatibility if needed elsewhere
-export const projects = [...productionProjects, ...technicalProjects];

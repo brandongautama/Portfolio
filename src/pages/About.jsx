@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { myphoto2 } from "../assets/images";
 import { linkedin, github, gmail } from "../assets/icons";
+import { highlights } from "../constants";
 
 const About = () => {
   const [copyStatus, setCopyStatus] = useState(false); // To indicate if the text was copied
@@ -22,10 +23,14 @@ const About = () => {
               Brandon
             </span>
           </h1>
-          <h2 className="subhead-text ">Cloud Software Engineer</h2>
+          <h2 className="subhead-text ">Senior Software Engineer</h2>
+          <p className="mt-2 font-poppins font-medium text-slate-700">
+            Backend and distributed systems · Roblox Marketplace · ex-Amazon
+            (Alexa, AWS)
+          </p>
           <div className="mt-5 gap-3 text-slate-500">
             <p>
-              I'm a Software Engineer at Amazon based in the San Francisco Bay Area. I build distributed systems that hold up under pressure — the kind where traffic spikes 50x overnight and everything still needs to work. At Alexa, I built the cloud service powering content on all Echo Show devices worldwide. At AWS, I'm building data platforms and workflow engines for enterprise customers across genomics and automotive.
+              I'm a Senior Software Engineer at Roblox based in the San Francisco Bay Area, working on the backend of the Avatar Marketplace. Before that I spent six years at Amazon. At Alexa, I built the cloud service powering content on Echo Show devices worldwide, and at AWS I built data platforms and workflow engines for enterprise customers across genomics and automotive. Most of my work is distributed systems under heavy load, like the safe mode I built that kept Echo Show content serving through a 50x retry storm during a major AWS outage. I work mostly in C#, Java and AWS.
             </p>
           </div>
           <div className="flex flex-wrap justify-left md:justify-start items-center w-full">
@@ -59,6 +64,23 @@ const About = () => {
             alt="Profile Picture"
           />
         </div>
+      </div>
+
+      {/* Highlights */}
+      <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {highlights.map((highlight) => (
+          <div
+            key={highlight.metric}
+            className="bg-white rounded-xl border-2 p-4 flex flex-col"
+          >
+            <span className="blue-gradient_text font-poppins font-semibold text-3xl">
+              {highlight.metric}
+            </span>
+            <span className="mt-2 text-sm text-slate-500">
+              {highlight.label}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );

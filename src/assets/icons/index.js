@@ -42,6 +42,10 @@ import housemateslogo from "./housemateslogo.svg";
 import surfstore from "./surfstore.svg";
 import raft from "./raft.svg";
 import aiagents from "./ai-agents.svg";
+import roblox from "./roblox.svg";
+import csharp from "./csharp.svg";
+import grpc from "./grpc.svg";
+import mcp from "./mcp.svg";
 
 export {
   css,
@@ -88,4 +92,8 @@ export {
   surfstore,
   raft,
   aiagents,
+  roblox,
+  csharp,
+  grpc,
+  mcp,
 };

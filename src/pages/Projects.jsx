@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 
 import CTA from "../components/CTA";
-import { productionProjects, technicalProjects } from "../constants";
+import { projects } from "../constants";
 import { arrow } from "../assets/icons";
 import { Fragment } from "react";
 
@@ -92,24 +92,8 @@ const Projects = () => {
           <p></p>
         </div>
 
-        {/* Production Applications */}
-        <div className="mt-12">
-          <h2 className="text-3xl font-poppins font-semibold text-slate-800 mb-6">
-            Production Applications
-          </h2>
-          <div className="flex flex-wrap gap-16 gap-y-8">
-            {productionProjects.map(renderProjectCard)}
-          </div>
-        </div>
-
-        {/* Technical Implementations */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-poppins font-semibold text-slate-800 mb-6">
-            Technical Implementations
-          </h2>
-          <div className="flex flex-wrap gap-16 gap-y-8">
-            {technicalProjects.map(renderProjectCard)}
-          </div>
+        <div className="mt-12 flex flex-wrap gap-16 gap-y-8">
+          {projects.map(renderProjectCard)}
         </div>
       </div>
     </section>
