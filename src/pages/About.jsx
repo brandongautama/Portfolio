@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { myphoto2 } from "../assets/images";
+import { myphoto3 } from "../assets/images";
 import { linkedin, github, gmail } from "../assets/icons";
 import { highlights } from "../constants";
 
@@ -58,8 +58,8 @@ const About = () => {
         </div>
         <div className="sm:flex justify-center md:col-span-2">
           <img
-            src={myphoto2}
-            className="object-contain float-center h-56 md:h-full m-auto"
+            src={myphoto3}
+            className="object-cover float-center h-56 w-56 md:h-80 md:w-80 m-auto rounded-2xl shadow-md"
             alt="Profile Picture"
           />
         </div>

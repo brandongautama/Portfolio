@@ -6,5 +6,6 @@ import tesla from "./tesla.png";
 import logo from "./logo.svg";
 import myphoto from "./myphoto.png";
 import myphoto2 from "./myphoto2.png";
+import myphoto3 from "./myphoto3.jpg";
 
-export { hero, meta, shopify, starbucks, tesla, logo, myphoto, myphoto2 };
+export { hero, meta, shopify, starbucks, tesla, logo, myphoto, myphoto2, myphoto3 };
