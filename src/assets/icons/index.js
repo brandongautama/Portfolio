@@ -46,6 +46,7 @@ import roblox from "./roblox.svg";
 import csharp from "./csharp.svg";
 import grpc from "./grpc.svg";
 import mcp from "./mcp.svg";
+import berkeley from "./berkeley.svg";
 
 export {
   css,
@@ -96,4 +97,5 @@ export {
   csharp,
   grpc,
   mcp,
+  berkeley,
 };

@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Routes, useLocation } from "react-route
 import CTA from "./components/CTA";
 import { scroller } from "react-scroll";
 
-import { Home, About, Projects, Timeline, Skills, TaxWise } from "./pages";
+import { Home, About, Projects, Timeline, Skills, TaxWise, Writing } from "./pages";
 import Navbar from "./components/Navbar";
 import { routes } from "./routes";
 import { work_experience, education } from "./constants";
@@ -11,10 +11,11 @@ import { work_experience, education } from "./constants";
 const HomePage = () => (
   <>
     <About />
-    <Skills />
     <Timeline id={"#work_experience"} timeline={work_experience} />
-    <Timeline id={"#education"} timeline={education} />
+    <Writing />
     <Projects />
+    <Skills />
+    <Timeline id={"#education"} timeline={education} />
     <hr className="border-slate-200" />
     <CTA />
   </>

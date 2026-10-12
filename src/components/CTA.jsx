@@ -10,7 +10,7 @@ const CTA = () => {
           Contact
         </span>
         <br className="" />
-        <span>Feel free to reach out!</span>
+        <span>Feel free to reach out.</span>
       </p>
       {/* <Link to="/contact" className="button"></Link> */}
       <div className="flex flex-col mr-8 gap-4">

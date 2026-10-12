@@ -43,6 +43,7 @@ import {
   csharp,
   grpc,
   mcp,
+  berkeley,
 } from "../assets/icons";
 
 export const skills = [
@@ -120,10 +121,10 @@ export const highlights = [
     where: "Amazon Alexa",
   },
   {
-    metric: "35K TPS",
-    title: "Echo Show content orchestration",
-    detail: "Serving millions of devices worldwide",
-    where: "Amazon Alexa",
+    metric: "9x faster",
+    title: "Genomics data transfer",
+    detail: "4 TiB in 8 minutes, down from 75",
+    where: "AWS HealthOmics",
   },
   {
     metric: "6x capacity",
@@ -132,10 +133,10 @@ export const highlights = [
     where: "AWS HealthOmics",
   },
   {
-    metric: "9x faster",
-    title: "Genomics data transfer",
-    detail: "4 TiB in 8 minutes, down from 75",
-    where: "AWS HealthOmics",
+    metric: "AI triage agent",
+    title: "Oncall triage in 2 minutes",
+    detail: "Down from 20-30 minutes; 10 → 25 tickets resolved per week",
+    where: "AWS",
   },
 ];
 
@@ -152,7 +153,7 @@ export const work_experience = {
       points: [
         "Build backend services for the Roblox Avatar Marketplace, where users browse and buy avatar items, bundles and Looks, as high-traffic C#/.NET microservices behind REST and gRPC APIs",
         "Develop the personalization pipeline behind the shop's recommendation rows, an experiment-driven fetch, rank and filter flow that calls ML ranking services and is tuned through A/B tests",
-        "Build event-driven pipelines that validate, moderate and index user-created and ML-generated Looks into vector-based search and recommendations",
+        "Build event-driven pipelines that validate, moderate and index user-created Looks into vector-based search and recommendations",
       ],
     },
     {
@@ -164,11 +165,10 @@ export const work_experience = {
       points: [
         "Designed and built system to parallelize S3 directory imports across AWS HealthOmics workflow engines (WDL, CWL, Nextflow), splitting single-node transfers into multiple concurrent tasks across shared filesystem; reduced 4 TiB imports from 75 minutes to 8 minutes (9x faster), saving 9,500+ customer-hours annually",
         "Architected multi-cell platform for AWS HealthOmics, splitting control and data planes across dedicated AWS accounts; scaled service capacity from 40K to 240K concurrent tasks (6x), enabling dedicated cells for top enterprise customers",
-        "Built a self-improving AI oncall triage agent (Lambda, CloudWatch, DynamoDB, Bedrock) that diagnoses new tickets from logs and past resolutions; cut triage from 20-30 minutes to 2 minutes and raised tickets resolved per week from 10 to 25",
-        "Led root-cause analysis for major AWS service outage and designed dependency caching fallback, cutting recovery time from hours to seconds and preventing cascading failures across 5+ downstream services",
+        "Built AI oncall triage agent (Bedrock, Lambda, DynamoDB) that diagnoses new tickets from logs and past resolutions; cut triage from 20-30 minutes to 2 minutes and raised tickets resolved per week from 10 to 25",
+        "Led root-cause analysis for major AWS service outage and designed dependency caching fallback, cutting recovery time from hours to seconds and preventing cascading failures",
         "Designed code intelligence platform mapping components to tests and pipeline history, enabling blast radius analysis on every code review; cut release cycle from 27 days to 7 days (4x faster)",
         "Led development of multi-tenant data streaming platform (AWS Autoloop) enabling automotive OEMs to ingest, govern, and distribute vehicle telemetry across AWS; coordinated across 4 teams and unblocked flagship enterprise customer launch",
-        "Reduced deployment cycle by 4x (8 days to 2 days) by parallelizing regional pipeline waves; built consolidated health monitoring dashboard used daily to detect production issues before customer impact",
       ],
     },
     {
@@ -180,7 +180,7 @@ export const work_experience = {
       points: [
         "Architected and developed high-availability cloud orchestration service powering content delivery on millions of Alexa Echo Show devices worldwide at 35,000 TPS, integrating multiple content providers with real-time ranking for low-latency response delivery",
         "Proactively designed and built fault-tolerant retry storm protection with graceful degradation, absorbing 50x traffic surges (3,000 → 150,000 TPS) at 4x faster response time (360ms → 90ms); activated during major AWS outage preventing cascading failures across 5+ services",
-        "Drove redesign of distributed state synchronization between cloud and device using pending transaction pattern, eliminating state inconsistencies, deadlocks, and out-of-sync failures across async workflows serving millions of devices",
+        "Led the redesign of cloud-device state synchronization for Echo Hub across 3 teams, making the cloud the source of truth with a pending transaction pattern; ended permanent out-of-sync failures and raised the product rating from 2.9 to 4.3",
         "Built scalable experimentation infrastructure decoupling experiment configuration from service code, enabling product managers to independently deploy A/B tests across all devices, reducing setup time from 2-3 days to under 10 minutes",
         "Mentored 2 interns and onboarded 3 team members; designed oncall pattern analysis mechanism adopted across multiple teams, systematically reducing high-severity ticket volume by 40%",
       ],
@@ -192,8 +192,7 @@ export const work_experience = {
       iconBg: "#a2d2ff",
       date: "Sep 2019 - Mar 2020",
       points: [
-        "Teaching Assistant for graduate-level courses CSE 224 (Networked Systems) and CSE 124 (Networked Services), supporting advanced distributed systems curriculum",
-        "Facilitated discussion sections and office hours, mentored students on complex networking concepts, and managed grading for 100+ students while establishing project infrastructure",
+        "Teaching Assistant for networking courses CSE 224 (Networked Systems, graduate) and CSE 124 (Networked Services); ran discussion sections and grading for 100+ students",
       ],
     },
     {
@@ -240,7 +239,7 @@ export const education = {
     {
       title: "University of California, Berkeley",
       company_name: "Summer Exchange in Computer Science",
-      icon: ucsd,
+      icon: berkeley,
       iconBg: "#cbcbf9",
       date: "Jun 2015 - Aug 2015",
       points: [
@@ -267,17 +266,17 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "TaxWise",
     description:
-      "iOS investment tax management application that enables users to track transactions, analyze cumulative tax implications, and simulate various investment scenarios for informed financial decisions.",
-    skills: ["JavaScript", "ReactNative"],
+      "iOS investment tax management application that enables users to track transactions, analyze cumulative tax implications, and simulate investment scenarios.",
+    skills: ["JavaScript", "React Native"],
     link: "/TaxWise",
     appStoreLink: "https://apps.apple.com/us/app/taxwise-investment-tax-tool/id6751554700",
   },
   {
     iconUrl: surfstore, // https://commons.wikimedia.org/wiki/File:Antu_seafile.svg
     theme: "btn-back-blue",
-    name: "Cloud-based File Storage Service",
+    name: "SurfStore",
     description:
-      "Distributed file storage system with global geographic distribution, implementing fault-tolerant architecture for high availability. Designed scalable backend using distributed consensus algorithms and cloud infrastructure for reliable file management.",
+      "Distributed cloud file storage service with geographic replication and fault-tolerant architecture using consensus algorithms.",
     skills: ["Python", "Java", "RPC", "AWS"],
     link: "https://github.com/brandongautama/SurfStore",
   },
@@ -295,16 +294,35 @@ export const projects = [
     theme: "btn-back-green",
     name: "HouseMates",
     description:
-      "Cross-platform mobile application for household task management with real-time synchronization across multiple users. Built full-stack solution using React Native frontend, Node.js backend, and cloud database architecture for seamless collaboration.",
-    skills: ["JavaScript", "ReactNative"],
+      "Cross-platform mobile application for household task management with real-time synchronization across multiple users. Built full-stack solution using React Native frontend, Node.js backend, and a cloud database.",
+    skills: ["JavaScript", "React Native"],
     link: "https://github.com/brandongautama/HouseMates",
   },
-  {
-    iconUrl: github,
-    theme: "btn-back-pink",
-    name: "Gitlet",
-    description: "Version control system replicating core Git functionality including branching, merging, and distributed repository management. Implemented efficient data structures and algorithms for version tracking and conflict resolution.",
-    skills: ["Java"],
-    link: "https://github.com/brandongautama/Gitlet",
-  },
 ];
+
+export const writing = {
+  profile: "https://medium.com/@brandongautama",
+  posts: [
+    {
+      title: "Building a Self-Improving AI Oncall Agent",
+      summary:
+        "How a retrieval-based AI agent cut oncall triage from 20-30 minutes to 2 minutes, and kept getting more accurate without retraining the model.",
+      date: "Oct 2026",
+      link: "https://medium.com/@brandongautama/building-a-self-improving-ai-oncall-agent-275d4f862b6c",
+    },
+    {
+      title: "Designing for a 50x Retry Storm",
+      summary:
+        "How graceful degradation kept a cloud service answering through a 50x traffic surge during a major AWS outage.",
+      date: "Oct 2026",
+      link: "https://medium.com/@brandongautama/designing-for-a-50x-retry-storm-4926bf913437",
+    },
+    {
+      title: "Message Delivery System using AWS Step Functions",
+      summary:
+        "Designing guaranteed message delivery to devices over an asynchronous channel, with acknowledgements and retries built on AWS Step Functions.",
+      date: "Jul 2024",
+      link: "https://medium.com/@brandongautama/message-delivery-system-using-aws-step-functions-23c8105a01f8",
+    },
+  ],
+};

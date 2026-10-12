@@ -4,5 +4,6 @@ import Projects from "./Projects";
 import Timeline from "./Timeline";
 import Skills from "./Skills";
 import TaxWise from "./TaxWise";
+import Writing from "./Writing";
 
-export { Home, About, Projects, Timeline, Skills, TaxWise };
+export { Home, About, Projects, Timeline, Skills, TaxWise, Writing };

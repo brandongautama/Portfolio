@@ -85,10 +85,10 @@ const About = () => {
             key={highlight.metric}
             className="bg-white rounded-2xl border border-slate-200/80 p-5 flex flex-col transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <span className="font-poppins font-bold tracking-tight tabular-nums text-3xl text-slate-900">
+            <span className="font-poppins font-semibold tracking-tight tabular-nums text-2xl text-slate-800">
               {highlight.metric}
             </span>
-            <span className="mt-2 font-poppins font-semibold text-slate-800">
+            <span className="mt-2 font-poppins font-medium text-slate-700">
               {highlight.title}
             </span>
             <span className="mt-1 text-sm text-slate-500">
