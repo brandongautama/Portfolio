@@ -114,20 +114,28 @@ export const skills = [
 
 export const highlights = [
   {
-    metric: "50x",
-    label: "Traffic spike absorbed during a major AWS outage (3,000 → 150,000 TPS)",
+    metric: "50x traffic surge",
+    title: "Retry storm protection",
+    detail: "3,000 → 150,000 TPS during a major AWS outage",
+    where: "Amazon Alexa",
   },
   {
-    metric: "35,000 TPS",
-    label: "Cloud orchestration serving content on millions of Echo Show devices",
+    metric: "35K TPS",
+    title: "Echo Show content orchestration",
+    detail: "Serving millions of devices worldwide",
+    where: "Amazon Alexa",
   },
   {
-    metric: "6x",
-    label: "AWS HealthOmics capacity, from 40K to 240K concurrent tasks",
+    metric: "6x capacity",
+    title: "Multi-cell genomics platform",
+    detail: "40K → 240K concurrent tasks",
+    where: "AWS HealthOmics",
   },
   {
-    metric: "9x",
-    label: "Faster 4 TiB genomics imports, from 75 minutes to 8 minutes",
+    metric: "9x faster",
+    title: "Genomics data transfer",
+    detail: "4 TiB in 8 minutes, down from 75",
+    where: "AWS HealthOmics",
   },
 ];
 
@@ -142,10 +150,9 @@ export const work_experience = {
       iconBg: "#e2e8f0",
       date: "Sep 2026 - Present",
       points: [
-        "Build and operate backend services for the Roblox Avatar Marketplace (avatar items, bundles and Looks), including the personalized, ML-ranked rows on the shop's landing page, in C#/.NET behind REST and gRPC APIs",
-        "Unblocked a cross-team product launch by keeping a new type of user-generated look out of Marketplace search and recommendations, after tracing every path into them and shipping a guarded indexer change",
-        "Removed blank tiles from the shop's themed recommendation rows by moving moderation-visibility filtering into the ranking pipeline as a reusable, tested filter, designed with the partner ML team",
-        "Cut ramp-up on a complex multi-service domain by writing an onboarding guide and building AI-assisted engineering workflows (Claude Code skills for investigation, testing and deploy monitoring)",
+        "Build backend services for the Roblox Avatar Marketplace, where users browse and buy avatar items, bundles and Looks, as high-traffic C#/.NET microservices behind REST and gRPC APIs",
+        "Develop the personalization pipeline behind the shop's recommendation rows, an experiment-driven fetch, rank and filter flow that calls ML ranking services and is tuned through A/B tests",
+        "Build event-driven pipelines that validate, moderate and index user-created and ML-generated Looks into vector-based search and recommendations",
       ],
     },
     {

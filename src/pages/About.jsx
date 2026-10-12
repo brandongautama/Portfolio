@@ -23,14 +23,13 @@ const About = () => {
               Brandon
             </span>
           </h1>
-          <h2 className="subhead-text ">Senior Software Engineer</h2>
+          <h2 className="subhead-text ">Senior Software Engineer at Roblox</h2>
           <p className="mt-2 font-poppins font-medium text-slate-700">
-            Backend and distributed systems · Roblox Marketplace · ex-Amazon
-            (Alexa, AWS)
+            Backend · Distributed Systems
           </p>
           <div className="mt-5 gap-3 text-slate-500">
             <p>
-              I'm a Senior Software Engineer at Roblox based in the San Francisco Bay Area, working on the backend of the Avatar Marketplace. Before that I spent six years at Amazon. At Alexa, I built the cloud service powering content on Echo Show devices worldwide, and at AWS I built data platforms and workflow engines for enterprise customers across genomics and automotive. Most of my work is distributed systems under heavy load, like the safe mode I built that kept Echo Show content serving through a 50x retry storm during a major AWS outage. I work mostly in C#, Java and AWS.
+              I'm a Senior Software Engineer at Roblox based in the San Francisco Bay Area. Before that I spent six years at Amazon. At Alexa, I built the cloud service powering content on Echo Show devices worldwide, and at AWS I built a multi-tenant data streaming platform and workflow engines for enterprise customers across automotive and genomics. I design and build high-throughput distributed systems, including fault-tolerant retry storm protection that absorbed a 50x traffic surge during a major AWS outage.
             </p>
           </div>
           <div className="flex flex-wrap justify-left md:justify-start items-center w-full">
@@ -76,8 +75,14 @@ const About = () => {
             <span className="blue-gradient_text font-poppins font-semibold text-3xl">
               {highlight.metric}
             </span>
-            <span className="mt-2 text-sm text-slate-500">
-              {highlight.label}
+            <span className="mt-2 font-poppins font-semibold text-slate-800">
+              {highlight.title}
+            </span>
+            <span className="mt-1 text-sm text-slate-500">
+              {highlight.detail}
+            </span>
+            <span className="mt-auto pt-3 text-xs font-medium text-slate-400">
+              {highlight.where}
             </span>
           </div>
         ))}
